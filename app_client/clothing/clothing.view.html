@@ -1,0 +1,32 @@
+<div id="wrapper" ng-class="vm.toggle ? 'toggled' : ''">
+
+    <sidebar></sidebar>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>{{vm.content}}</h1>
+                    <div class="container">
+                        <p class="bg-info" ng-bind="vm.selectedzip.zip"></p>
+                        <p class="bg-info" ng-bind="vm.selectedtype.type"></p>
+                        
+                    </div>
+
+                    <div class="container">
+                        <p class="bg-info"><strong>Food</strong>: {{vm.FoodLocations.food}} </p>
+                        <p class="bg-info"><strong>Clothing</strong>: {{vm.ClothingLocations.clothing}} </p>
+                        <p class="bg-info"><strong>Utility</strong>: {{vm.UtilityLocations.utilty}}</p>
+                    </div>
+                    
+                    <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle" ng-click="toggleMenu">Toggle Menu</a>-->
+                    <button type="button" class="btn btn-default btn-link" id="menu-toggle" ng-model="vm.toggle" ng-click="vm.toggle=!vm.toggle">Toggle Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
