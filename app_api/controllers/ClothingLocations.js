@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var FoodLocations = mongoose.model('ClothingLocations');
+var ClothingLocations = mongoose.model('ClothingLocations');
 
 //utility method for the module
 var sendJSONresponse = function(res, status, content)

@@ -14,7 +14,7 @@
       })
       .when('/FoodLocations/', {
         templateUrl: '/FoodLocations/food.view.html',
-        controller: 'FoodLocactionsCtrl',
+        controller: 'FoodLocationsCtrl',
         controllerAs: 'vm'
       })
       .when('/ClothingLocations/', {

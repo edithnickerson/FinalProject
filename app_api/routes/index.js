@@ -1,11 +1,11 @@
 var express             = require('express');
 var router              = express.Router();
-var ctrlFoodLocations    = require('../controllers/food');
-var ctrlClothingLocations     = require('../controllers/clothi');
-var ctrlUtilityLocations    = require('../controllers/utility');
-var ctrlyelpapi   = require('../controllers/yelpapi');
-var MONGO_URI=require('MONGO_URI');
-var db= MONGO_URI('mongodb://edithnickerson:edithnickerson@ds013901.mlab.com:13901/resourcedb'['FoodLocations,ClothingLocations, UtilityLocations'] );
+var ctrlFoodLocations    = require('../controllers/FoodLocations');
+var ctrlClothingLocations     = require('../controllers/ClothingLocations');
+var ctrlUtilityLocations    = require('../controllers/UtilityLocations');
+//var ctrlyelpapi   = require('../controllers/yelpapi');
+
+
 
 /* Food DATA*/ 
 router.get('/FoodLocations/:zip', ctrlFoodLocations.FoodLocationsReadOne);
@@ -23,6 +23,6 @@ router.get('/UtilityLocations', ctrlUtilityLocations.UtilityLocationsReadAll);
 //router.get('/airportdata', ctrlAirportData.airportDataReadAll);
 
 /* API KEYS */
-router.get('/yelpapi', ctrlyelpapi.getReviews);
+//router.get('/yelpapi', ctrlyelpapi.getyelpapi);
 
 module.exports = router;

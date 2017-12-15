@@ -5,7 +5,7 @@
     
     .controller('foodCtrl', foodCtrl);
 
-  foodCtrl.$inject = ['$scope', 'FoodLocations', 'FoodLocations', 'SelectedData'];
+FoodLocationsCtrl.$inject = ['$scope', 'FoodLocationsCtrl', 'FoodLocations', 'SelectedData'];
 
   function foodCtrl($scope, FoodLocations, FoodLocations, SelectedData) {
     // Nasty IE9 redirect hack (not recommended)
@@ -14,15 +14,15 @@
       window.location.href = '/#' + window.location.pathname;
     }*/
     console.log(window.location);    
-    
+   
     
     var vm = this;
-    vm.content = "Resource List";
+    vm.content = "Food";
     vm.selectedzip = "";
     vm.selectedtype = "";
     
     //check selected Departure
-    if(SelectedData.selectedzip !== null){
+    if(SelectedData.selectedFoodLocations.zip !== null){
       vm.selectedzip = SelectedData.selectedzip;
     }
     

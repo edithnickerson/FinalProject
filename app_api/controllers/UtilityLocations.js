@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var FoodLocations = mongoose.model('UtilityLocations');
+var UtilityLocations = mongoose.model('UtilityLocations');
 
 //utility method for the module
 var sendJSONresponse = function(res, status, content)
@@ -13,7 +13,7 @@ module.exports.UtilityLocationsReadAll= function(req, res)
 {
   console.log("Finding all Utility Resources", req);
   
-  FoodLocations
+  UtilityLocations
     .find({})
     .exec(function(err, UtilityLocations){
       if(err){

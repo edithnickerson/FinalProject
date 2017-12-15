@@ -44,12 +44,12 @@
                 .catch(function(e) {
                     console.log(e);
                 });            
-        }
+        }*/
 
-        console.log("IN CLIMB DATA FOR WEIGHT: " + vm.selectedWeight.weight);        
+        console.log("IN CLIMB DATA FOR WEIGHT: " + vm.selectedFoodLocations.zip);        
         
         //call services
         vm.getClimbDataForWeight();
     }
 
-})();*/
+})();
