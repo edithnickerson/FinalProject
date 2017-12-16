@@ -8,7 +8,7 @@ var ctrlUtilityLocations    = require('../controllers/UtilityLocations');
 
 
 /* Food DATA*/ 
-router.get('/FoodLocations/:zip', ctrlFoodLocations.FoodLocationsReadOne);
+router.get('/FoodLocations', ctrlFoodLocations.FoodLocationsReadOne);
 router.get('/FoodLocations', ctrlFoodLocations.FoodLocationsReadAll);
 
 /* CLothing DATA */

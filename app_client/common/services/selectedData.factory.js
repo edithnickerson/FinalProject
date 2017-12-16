@@ -7,8 +7,8 @@
   //selectedData.$inject = ['$http'];
   function selectedData () {
       return {
-          selectedzip : '',
-          selectetype : ''
+          selectedData : '',
+         selectedtype : ''
          
       };
   }

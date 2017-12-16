@@ -17,18 +17,18 @@
 
         vm.content = "Utility Data";
 
-        vm.selectedzip = "";
-        vm.selectedtype = "";
+        vm.selectedUtilityLocations.zip = "";
+        vm.selectedUtilityLocations.type = "";
        
 
         //check selected Departure
-        if (SelectedData.selectedzip !== null) {
-            vm.selectedzip = SelectedData.selectedzip;
+        if (SelectedData.selectedUtilityLocations.zip !== null) {
+            vm.selectedUtilityLocations.zip = SelectedData.selectedUtilityLocations.zip;
         }
 
         //check selected Arrival
-        if (SelectedData.selectedtype !== null) {
-            vm.selectedtype = SelectedData.selectedtype;
+        if (SelectedData.selectedUtilityLocations.type !== null) {
+            vm.selectedUtilityLocations.type = SelectedData.selectedUtilityLocations.type;
         }
 
         
@@ -46,10 +46,10 @@
                 });            
         }*/
 
-        console.log("IN CLIMB DATA FOR WEIGHT: " + vm.selectedFoodLocations.zip);        
+       // console.log("IN CLIMB DATA FOR WEIGHT: " + vm.selectedFoodLocations.zip);        
         
         //call services
-        vm.getClimbDataForWeight();
+        vm.getUtilityLocations();
     }
 
 })();

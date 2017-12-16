@@ -15,20 +15,20 @@
     var vm = this;
     console.log(window.location);
     
-    vm.content = "Resource List";
+    vm.content = "Find Help HERE!";
     
-    vm.selectedzip = "";
-    vm.selectedtype= "";
+    //vm.selectedzip = "";
+    //vm.selectedtype= "";
    
     
     //check selected Zip code
-    if(SelectedData.selectedzip !== null){
-      vm.selectedzip = SelectedData.selectedzip;
+    if(SelectedData.selectedFoodLocations !== null){
+      vm.selectedFoodLocations = SelectedData.selectedFoodLocations;
     }
     
     //check selected Resource type
-    if(SelectedData.selectedtype !== null){
-      vm.selectedtype = SelectedData.selectedtype;
+    if(SelectedData.selectedFoodLocations.type !== null){
+      vm.selectedFoodLocations.type = SelectedData.selectedFoodLocations.type;
     }
  
   }

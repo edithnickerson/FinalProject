@@ -3,11 +3,11 @@
   angular
     .module('resourceApp')
     
-    .controller('foodCtrl', foodCtrl);
+    .controller('FoodLocationsCtrl', FoodLocationsCtrl);
 
-FoodLocationsCtrl.$inject = ['$scope', 'FoodLocationsCtrl', 'FoodLocations', 'SelectedData'];
+  FoodLocationsCtrl.$inject = ['$scope', 'FoodLocationsCtrl', 'FoodLocations', 'SelectedData'];
 
-  function foodCtrl($scope, FoodLocations, FoodLocations, SelectedData) {
+  function FoodLocationCtrl($scope, FoodLocationsCtrl, FoodLocations, SelectedData) {
     // Nasty IE9 redirect hack (not recommended)
     /*
     if (window.location.pathname !== '/') {
@@ -18,17 +18,17 @@ FoodLocationsCtrl.$inject = ['$scope', 'FoodLocationsCtrl', 'FoodLocations', 'Se
     
     var vm = this;
     vm.content = "Food";
-    vm.selectedzip = "";
-    vm.selectedtype = "";
+    vm.selectedFoodLocations.zip = "";
+    vm.selectedFoodLocations.type = "";
     
     //check selected Departure
     if(SelectedData.selectedFoodLocations.zip !== null){
-      vm.selectedzip = SelectedData.selectedzip;
+      vm.selectedFoodLocations.zip = SelectedData.selectedFoodLocations.zip;
     }
     
     //check selected Arrival
-    if(SelectedData.selectedtype !== null){
-      vm.selectedtype = SelectedData.selectedtype;
+    if(SelectedData.selectedFoodLocation.type !== null){
+      vm.selectedFoodLocations.type = SelectedData.selectedFoodLoctaions.type;
     }
     
    
@@ -37,7 +37,7 @@ FoodLocationsCtrl.$inject = ['$scope', 'FoodLocationsCtrl', 'FoodLocations', 'Se
     vm.getFoodLocations = function() {
       FoodLocations.getFoodLocations()
         .then(function(response) {
-          vm.food = response.data;
+          vm.FoodLocations = response.data;
           console.log(response);
         })
         .catch(function(e) {
@@ -49,8 +49,8 @@ FoodLocationsCtrl.$inject = ['$scope', 'FoodLocationsCtrl', 'FoodLocations', 'Se
     vm.getClothingLocations = function() {
       ClothingLocations.getClothingLocations()
         .then(function(response) {
-          vm.clothing = response.data;
-          console.log(vm.clothing);
+          vm.ClothingLocations = response.data;
+          console.log(response);
         })
         .catch(function(e) {
           console.log(e);
@@ -69,21 +69,21 @@ FoodLocationsCtrl.$inject = ['$scope', 'FoodLocationsCtrl', 'FoodLocations', 'Se
     
     vm.clearSelectedData = function(){
       
-      vm.selectedzip = null;
-      vm.selectedtype = null;
+      vm.selectedFoodLocations.zip = null;
+      vm.selectedFoodLocation.type = null;
       
     }
     
     //saved departure
     $scope.$watch(
       function(){
-        return vm.selectedzip;    
+        return vm.selectedFoodLocations.zip;    
       }, 
       function (newValue, oldValue) {
         console.log(oldValue);
         console.log(newValue);
-        if (newValue.icao !== oldValue.icao){
-          SelectedData.selectedzip = newValue;
+        if (newValue.zip !== oldValue.zip){
+          SelectedData.selectedFoodLocations.zip = newValue;
         } 
       }, 
       true
@@ -92,13 +92,13 @@ FoodLocationsCtrl.$inject = ['$scope', 'FoodLocationsCtrl', 'FoodLocations', 'Se
     //saved arrival
     $scope.$watch(
       function(){
-        return vm.selectedtype;
+        return vm.selectedFoodLocations.type;
       }, 
       function (newValue, oldValue) {
         console.log(oldValue);
         console.log(newValue);
-        if (newValue.icao !== oldValue.icao){
-          SelectedData.selectedtype = newValue;
+        if (newValue.type !== oldValue.type){
+          SelectedData.selectedFoodLocations.type = newValue;
         } 
       }, 
       true

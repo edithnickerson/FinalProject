@@ -8,30 +8,31 @@
     
     $routeProvider
       .when('/', {
-        templateUrl: '/home/home.view.html',
+        templateUrl: 'home/home.view.html',
         controller: 'homeCtrl',
         controllerAs: 'vm'
       })
       .when('/FoodLocations/', {
-        templateUrl: '/FoodLocations/food.view.html',
+        templateUrl: '/food/food.view.html',
         controller: 'FoodLocationsCtrl',
         controllerAs: 'vm'
       })
       .when('/ClothingLocations/', {
-        templateUrl: '/ClothingLocations/clothing.view.html',
+        templateUrl: '/clothing/clothing.view.html',
         controller: 'ClothingLocationsCtrl',
         controllerAs: 'vm'
       })
       .when('/UtilityLocations/', {
-        templateUrl: '/UtilityLocations/utility.view.html',
+        templateUrl: '/utility/utility.view.html',
         controller: 'UtilityLocationsCtrl',
         controllerAs: 'vm'
       })
-/*        templateUrl: '/airport/airport.view.html',
-        controller: 'airportCtrl',
+      .when('/Reviews/', {
+        templateUrl: '/review/reviewModal.view.html',
+        controller: 'reviewModalCtrl',
         controllerAs: 'vm'
       })
-      .when('/yelpapi/', {
+    /*  .when('/yelpapi/', {
         templateUrl: 'yelpapi/weather.view.html',
         controller: 'weatherCtrl',
         controllerAs: 'vm'
